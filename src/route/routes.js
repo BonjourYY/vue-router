@@ -7,18 +7,22 @@ const routes = [
   { path: "/", component: () => { require("@/App.vue") } },
   {
     path: "/user",
+    name: "theuser",
     component: TheUser,
     children: [
-      {
-        path: "",
-        component: TheUser
-      },
+      // {
+      //   path: "",
+      //   name: "theuser",
+      //   component: TheUser
+      // },
       {
         path: "sex",
+        name: "usersex",
         component: UserSex
       },
       {
         path: "hobby",
+        name: "userhobby",
         component: UserHobby
       }
     ]

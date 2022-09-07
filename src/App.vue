@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>嵌套路由匹配</h1>
     <router-view></router-view>
   </div>
 </template>
@@ -11,9 +10,6 @@ export default {
   name: 'App',
   components: {
 },
-mounted(){
-  console.log(this.$route)
-}
 }
 </script>
 
