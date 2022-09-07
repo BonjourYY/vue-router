@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <!-- <h1>动态路由匹配</h1>
-    <router-link to="/profilo/jack">profilo/jack</router-link>
-    <br>
-    <router-link to="/profilo/linda">profilo/linda</router-link> -->
+    <h1>嵌套路由匹配</h1>
     <router-view></router-view>
   </div>
 </template>
@@ -13,6 +10,9 @@
 export default {
   name: 'App',
   components: {
+},
+mounted(){
+  console.log(this.$route)
 }
 }
 </script>
