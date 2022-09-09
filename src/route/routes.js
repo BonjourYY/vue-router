@@ -4,7 +4,7 @@ import TheUser from "@/components/TheUser.vue"
 import UserSex from "@/components/UserSex.vue"
 import UserHobby from "@/components/UserHobby.vue"
 const routes = [
-  { path: "/", component: () => { require("@/App.vue") } },
+  { path: "/", components: () => { require("@/App.vue") } },
   {
     path: "/user",
     name: "theuser",
@@ -18,15 +18,19 @@ const routes = [
       {
         path: "sex",
         name: "usersex",
-        component: UserSex
+        components: {
+          "default": UserSex,
+          "hobby": UserHobby
+        }
       },
       {
         path: "hobby",
         name: "userhobby",
-        component: UserHobby
+        component: UserSex
       }
     ]
   },
+  // 兜底路由
   { path: "*", component: NotFound }
 ]
 export default routes;

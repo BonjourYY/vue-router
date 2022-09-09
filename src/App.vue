@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <h1>嵌套的多个命名出口</h1>
+    <router-view name="default"></router-view>
   </div>
 </template>
 
