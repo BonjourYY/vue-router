@@ -26,6 +26,8 @@ const routes = [
       {
         path: "hobby",
         name: "userhobby",
+        redirect: { name: "usersex" },
+        alias: "sssdddd",
         component: UserSex
       }
     ]
