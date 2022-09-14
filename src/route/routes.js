@@ -9,6 +9,7 @@ const routes = [
     path: "/user",
     name: "theuser",
     component: TheUser,
+
     children: [
       // {
       //   path: "",
@@ -21,13 +22,16 @@ const routes = [
         components: {
           "default": UserSex,
           "hobby": UserHobby
-        }
+        },
+        beforeEnter: (to, from, next) => {
+          console.log(to);
+          console.log(from);
+          next();
+        },
       },
       {
         path: "hobby",
         name: "userhobby",
-        redirect: { name: "usersex" },
-        alias: "sssdddd",
         component: UserSex
       }
     ]

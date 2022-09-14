@@ -8,7 +8,16 @@ import routes from "./route/routes.js"
 
 // 初始化路由实例
 let router = new VueRouter({
+  mode: "history",
   routes: routes
+})
+
+router.onError(() => {
+  console.log("导航发生了错误")
+})
+
+router.beforeEach((to, from, next) => {
+  next();
 })
 
 // 这一步是必须的
