@@ -3,13 +3,13 @@ import NotFound from "@/components/NotFound.vue"
 import TheUser from "@/components/TheUser.vue"
 import UserSex from "@/components/UserSex.vue"
 import UserHobby from "@/components/UserHobby.vue"
+import LoveName from "@/components/LoveName.vue"
 const routes = [
   { path: "/", components: () => { require("@/App.vue") } },
   {
     path: "/user",
     name: "theuser",
     component: TheUser,
-
     children: [
       // {
       //   path: "",
@@ -23,20 +23,23 @@ const routes = [
           "default": UserSex,
           "hobby": UserHobby
         },
-        beforeEnter: (to, from, next) => {
-          console.log(to);
-          console.log(from);
-          next();
-        },
       },
       {
         path: "hobby",
         name: "userhobby",
-        component: UserSex
+        component: UserHobby,
+        meta: { requiresAuth: true }
       }
     ]
+  },
+  {
+    path: "/love/:name",
+    name: "love",
+    component: LoveName
   },
   // 兜底路由
   { path: "*", component: NotFound }
 ]
+
+
 export default routes;

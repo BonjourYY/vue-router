@@ -16,9 +16,17 @@ router.onError(() => {
   console.log("导航发生了错误")
 })
 
+// 全局导航守卫
 router.beforeEach((to, from, next) => {
-  next();
+  if (to.matched.some((ele) => { return ele.meta.requiresAuth })) {
+    console.log("需要校验");
+    router.push({ name: "love", params: { name: "sddsf" } });
+  } else {
+    console.log("可以直接通过")
+    next();
+  }
 })
+
 
 // 这一步是必须的
 Vue.use(VueRouter)
