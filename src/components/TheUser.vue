@@ -1,7 +1,6 @@
 <template>
     <div>
-      <router-view name="default"></router-view>
-      
+        <router-view name="default"></router-view>
     </div>
     <!-- <router-view name="hobby"></router-view> -->
 
@@ -18,6 +17,14 @@ export default {
 }
 </script>
 
-<style module lang="scss">
 
+<!-- style 标签不能加 module 属性 -->
+
+<style lang="scss">
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>

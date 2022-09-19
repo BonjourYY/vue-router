@@ -1,5 +1,10 @@
 <template>
-  <p>用户爱好组件</p>
+  <transition name="fade">
+  <div>
+      <p>UserHobby Component</p>
+      <router-link :to="{name:'usersex'}">UserSex</router-link>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -8,6 +13,22 @@ export default {
 }
 </script>
 
-<style>
 
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: all 5s;
+}
+
+.fade-enter-active{
+  transform: translateX(-30px);
+  opacity: 0;
+  color: red;
+}
+
+.fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform: translateX(30px);
+  opacity: 0;
+  color:yellow;
+  font-size: 20px;
+}
 </style>

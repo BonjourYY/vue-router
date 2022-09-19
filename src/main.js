@@ -9,7 +9,10 @@ import routes from "./route/routes.js"
 // 初始化路由实例
 let router = new VueRouter({
   mode: "history",
-  routes: routes
+  routes: routes,
+  scrollBehavior: (to, from, savedPosition) => {
+    return savedPosition;
+  }
 })
 
 router.onError(() => {
@@ -20,7 +23,8 @@ router.onError(() => {
 router.beforeEach((to, from, next) => {
   if (to.matched.some((ele) => { return ele.meta.requiresAuth })) {
     console.log("需要校验");
-    router.push({ name: "love", params: { name: "sddsf" } });
+    next();
+    // router.push({ name: "love", params: { name: "sddsf" } });
   } else {
     console.log("可以直接通过")
     next();

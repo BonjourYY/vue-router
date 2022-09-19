@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <h1>嵌套的多个命名出口</h1>
-    <router-view name="default"></router-view>
+    <h1>路由动效</h1>
+      <router-view name="default"></router-view>
   </div>
 </template>
 
@@ -23,4 +23,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+
 </style>

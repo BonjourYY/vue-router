@@ -1,7 +1,9 @@
 <template>
-  <transition name="fade">
-
-    <p>用户性别组件</p>
+  <transition name="slide">
+  <div class="box">
+      <p>UserSex Component</p>
+      <router-link :to="{name:'userhobby'}">UserHobby</router-link>
+    </div>
   </transition>
 </template>
 
@@ -12,11 +14,20 @@ export default {
 }
 </script>
 
-<style lang="scss" module>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 5s;
+<style lang="scss">
+.slide-enter-active, .slide-leave-active {
+  transition: all 5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.slide-enter-active{
+  transform: translateX(30px);
+  opacity: 1;
+  color: red;
+}
+
+.slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform: translateX(30px);
   opacity: 0;
+  color:green;
 }
 </style>
