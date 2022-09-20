@@ -17,17 +17,27 @@ const routes = [
       //   component: TheUser
       // },
       {
-        path: "sex",
+        path: "sex/:hobby",
         name: "usersex",
         components: {
           "default": UserSex,
           "hobby": UserHobby
         },
+        props: {
+          // default: () => { return { sex: "我是sex" } },
+          hobby: (route) => { return { sex: "我是sex", hobby: route.params.hobby } }
+        }
       },
       {
-        path: "hobby",
+        path: "hobby/:id",
         name: "userhobby",
         component: UserHobby,
+        // props: () => {
+        //   return {
+        //     id: "id prop",
+        //     // xxx: routes.params.id
+        //   }
+        // },
         meta: { requiresAuth: true }
       }
     ]

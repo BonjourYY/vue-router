@@ -3,13 +3,24 @@
   <div>
       <p>UserHobby Component</p>
       <router-link :to="{name:'usersex'}">UserSex</router-link>
+      <p>{{hobby}}</p>
+      <p>{{sex}}</p>
     </div>
   </transition>
 </template>
 
 <script>
 export default {
-  name:"UserHobby"
+  name:"UserHobby",
+  props:{
+    hobby:{
+      type:String
+    },
+    sex:{
+      type:String
+    }
+  },
+  
 }
 </script>
 

@@ -1,8 +1,8 @@
 <template>
     <div>
         <router-view name="default"></router-view>
+        <router-view name="hobby"></router-view>
     </div>
-    <!-- <router-view name="hobby"></router-view> -->
 
 </template>
 

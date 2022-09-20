@@ -3,6 +3,7 @@
   <div class="box">
       <p>UserSex Component</p>
       <router-link :to="{name:'userhobby'}">UserHobby</router-link>
+      <p>{{sex}}</p>
     </div>
   </transition>
 </template>
@@ -10,7 +11,11 @@
 <script>
 export default {
   name:"UserSex",
-  
+  props:{
+    sex:{
+      type:String
+    }
+  }
 }
 </script>
 
